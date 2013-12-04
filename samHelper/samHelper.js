@@ -94,7 +94,7 @@ $(document).ready(function() {
                     html(siteInfo);
         $('tbody tr.site_help_table_row#site_help_table_row ' +
                         'td.site_help_table_item#progress_section').
-                    html('<p>Progress:</p><p>' + progress + '%</p>');
+                    html('<p>Progress: ' + progress + '%</p>');
 
         $('dd#button-me').html( '<button id="view-workflow" name="show-mo" type="button">View</button>');
         $('dd#button-me').click(function() {
