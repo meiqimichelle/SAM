@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SAM Tracker State Machine Demo</title>
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /> -->
+    <script src="jquery-1.8.3.min.js"></script>
+    <script src="govxStateMachine.js"></script>
+    <script src="govxArrow.js"></script>
+    <script src="samtracker.js"></script>
+  </head>
+<link rel="stylesheet" type="text/css" href="samtracker.css">
+  <body>
+  <div class="tracker-div" id="tracker-box">
+    <div class="arrow-chain" id="registration-progress">
+        <div id="anchor-chain"></div>
+    </div>
+    <div class="usecase" id="available-events">
+    </div>
+    <table class="tracker-table" id="state-table">
+        <tr>
+            <td class="state-box" id="s-Draft"><p>Draft</p></td>
+            <td class="state-box" id="s-WIPTINNotFound"><p>Work In Progress</p><p>Not Found</p></td>
+            <td class="state-box" id="s-WIPTINMatchSubmitted"><p>Work In Progress</p><p>Submitted</p></td>
+            <td class="state-box" id="s-SubmittedToTIN"><p>Submitted</p></td>
+        </tr>
+        <tr>
+            <td class="empty-box"><p></p></td>
+            <td class="empty-box"><p></p></td>
+            <td class="state-box" id="s-WIPTINMatchSatisfied"><p>Work In Progress</p><p>Satisfied</p></td>
+            <td class="state-box" id="s-SubmittedToCAGE"><p>Submitted to CAGE</p></td>
+        </tr>
+        <tr>
+            <td class="empty-box"><p></p></td>
+            <td class="empty-box"><p></p></td>
+            <td class="empty-box"><p></p></td>
+            <td class="state-box" id="s-Active"><p>Active</p></td>
+        </tr>
+        <tr>
+            <td class="empty-box"><p></p></td>
+            <td class="empty-box"><p></p></td>
+            <td class="empty-box"><p></p></td>
+            <td class="state-box" id="s-Expired"><p>Expired</p></td>
+        </tr>
+     </table>
+  </div>
+<div id="state-machine"></div>
+  <div id="scenario">
+    <p><select id="scenario-picker"></select></p>
+    <table id="scenario-table"> </table>
+  </div>
+  </body>
+</html>
