@@ -5,12 +5,7 @@
 //
 // It requires usdsJsHelper.js be loaded before execution
 
-if (localStorage.helperMode && localStorage.helperMode === 'configure') {
-    // In configure mode, provide JSON data to the configure extension
-    // Do not enable live help
-} else if (localStorage.helperMode && localStorage.helperMode !== 'help') {
-    // Do nothing
-} else {
+if (!localStorage.helperMode || localStorage.helperMode === 'help') {
     $(document).ready(function() {
         // define the insertion points
         var usdsJsHelper = new UsdsJsHelper();
@@ -52,7 +47,6 @@ if (localStorage.helperMode && localStorage.helperMode === 'configure') {
         $.ajax({
             type: "GET",
             url: chrome.extension.getURL("samHelper.json"),
-            // url: 'http://127.0.0.1:8124/page?site_name=samHelper&page_name=' + pageToken,
             dataType: "json"
         }).done(function(msg) {
           var jsonForPage;
@@ -63,9 +57,7 @@ if (localStorage.helperMode && localStorage.helperMode === 'configure') {
             }
           });
           usdsJsHelper.loadFieldHandlersForPage(jsonForPage);
-          // usdsJsHelper.loadFieldHandlersForPage(msg);
           progress = jsonForPage.progress;
-          // progress = usdsJsHelper.progressForPage(pageToken, msg);
         // Get the content for the help items
         var pageContent;
         $.ajax({
@@ -79,13 +71,14 @@ if (localStorage.helperMode && localStorage.helperMode === 'configure') {
                 'title="overview_text"><p>' +
                 msg.page_help +
                 '</p></div>';
-            } else if ((pageContent !== undefined) && (pageContent.overview_text !== undefined)) {
+            } else if ((pageContent !== undefined) &&
+                        (pageContent.overview_text !== undefined)) {
                 overviewText = pageContent.overview_text.outerHTML;
             } else {
                 overviewText = ' ';
             }
             var siteStuff =
-            usdsJsHelper.contentForPgItm(data, 'site_info');
+                usdsJsHelper.contentForPgItm(data, 'site_info');
             $(siteStuff.site).insertBefore(insertionPoints.samInsertionPoint);
             $('tbody tr.site_help_table_row#site_help_table_row ' +
                             'td.site_help_table_item#page_section').
