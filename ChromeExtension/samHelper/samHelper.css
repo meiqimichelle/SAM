@@ -120,6 +120,8 @@ div.helper_item.overview p {
 }
 
 div.helper_item.help_info {
+    position: fixed;
+    height:100px;
     border: solid black 3px;
     padding: 5px 3px;
     font-family: "Lucinda Grande",Arial,sans-serif;
@@ -127,6 +129,7 @@ div.helper_item.help_info {
     font-weight: 80%;
     background-color: #cacaca;
     color: black;
+    z-index: 100000;
 }
 
 div.helper_item table#site_help_table {
@@ -134,11 +137,23 @@ div.helper_item table#site_help_table {
     padding-right: 60px;
 }
 
+tr.site_help_table_row#site_help_table_row td#page_section {
+    text-align: left;
+    border-right: solid #666666 5px;
+    padding: 8px;
+    width: auto;
+}
+
+tr.site_help_table_row#site_help_table_row td#page_section p {
+    width: 250px;
+    line-height: 90%;
+}
+
 tr.site_help_table_row#site_help_table_row td#progress_section {
     text-align: right;
     border-right: solid #666666 5px;
     padding: 8px;
-    width: 500px;
+    width: auto;
 }
 
 tr.site_help_table_row#site_help_table_row td#progress_section p {
@@ -148,7 +163,7 @@ tr.site_help_table_row#site_help_table_row td#progress_section p {
 tr.site_help_table_row#site_help_table_row td#site_section {
     border-left: solid #666666 5px;
     padding: 8px;
-    width: 150px;
+    width: auto;
 }
 
 tr.site_help_table_row#site_help_table_row td#site_section div.helper_item {
