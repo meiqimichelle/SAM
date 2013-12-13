@@ -1,18 +1,53 @@
 {
     "title": "Sam Helper Configuration",
     "comment": "",
+    "assets": {
+        "html": {
+            "topBarContent": [
+                    "<div class='helper_page site_info' id='site_help' title='site_info'>",
+                    "<div class='helper_item help_info' title='site'><table id='site_help_table'>",
+                    "<tr class='site_help_table_row' id='site_help_table_row'>",
+                    "<td class='site_help_table_item' id='page_section'></td>",
+                    "<td class='site_help_table_item' id='progress_section'></td>",
+                    "<td class='site_help_table_item' id='site_section'></td></tr></table></div></div>"
+            ],
+            "site_help": [
+                "<div class='helper_item help_info' title='help'><dl>",
+                "<dt>Getting Help: Email</dt> <dd>",
+                "<a href='mailto:help.with.sam@businessusa.gov'>"
+           ]
+        }
+    },
     "pages": [
         {
             "page_name": "SAM_gov",
-            "progress": "3"
+            "progress": "3",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><span>Welcome to the SAM.gov helper. The helper is here to guide you through the SAM registration process. It will help you prepare and then steer you through the individual screens. When you are done, your business will be registered and ready to go.</span><span>The first step is to CREATE your account.  To begin, click on the 'Create User Account' button below on the left.</span></div><div class='helper_item overview' title='overview_text'><p>You will need an Individual Account to register your business with SAM. Please select [Create an Account] in the Individual Account Details box below.</p></div><div class='helper_item wizard' title='wizard'></div></div>"]
+                }
+            }
         },
         {
             "page_name": "Create_an_AccountChoose_Account_Type_",
-            "progress": "6"
+            "progress": "6",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><p>Click on Create Account to proceed.</p><p class='field-focus'></p><p class='field-hover'></p></div>"]
+                }
+            }
         },
         {
             "page_name": "Personal_Information______",
             "progress": "16",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><p> Go ahead and enter your details below, so that you can get an account and get started with SAM! </p><p class='field-focus'></p><p class='field-hover'></p></div>"]
+                }
+            },
             "form_fields": [
                 {
                     "token": "Title",
@@ -150,19 +185,43 @@
         },
         {
             "page_name": "Personal_Information__Duplicate_Email_Address_",
-            "progress": "16"
+            "progress": "16",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><p> Go ahead and enter your details below, so that you can get an account and get started with SAM! </p><p class='field-focus'></p><p class='field-hover'></p></div>"]
+                }
+            }
         },
         {
             "page_name": "Account_Information",
-            "progress": "20"
+            "progress": "20",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><p> Go ahead and enter your details below, so that you can get an account and get started with SAM! </p><p class='field-focus'></p><p class='field-hover'></p></div>"]
+                }
+            }
         },
         {
             "page_name": "Summary",
-            "progress": "22"
+            "progress": "22",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><p> Go ahead and enter your details below, so that you can get an account and get started with SAM! </p><p class='field-focus'></p><p class='field-hover'></p></div>"]
+                }
+            }
         },
         {
             "page_name": "Create_Account__Personal_Account_Created_Confirmation",
-            "progress": "24"
+            "progress": "24",
+            "assets": {
+                "html": {
+                    "page_overview":
+                    ["<div class='helper_item overview' title='overview_text'><p> Go ahead and enter your details below, so that you can get an account and get started with SAM! </p><p class='field-focus'></p><p class='field-hover'></p></div>"]
+                }
+            }
         }
     ]
 }
