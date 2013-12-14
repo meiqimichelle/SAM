@@ -2,7 +2,7 @@
   "name" : "Help me with SAM",
   "version" : "0.5.0",
   "description" : "show me what I need to know to register at SAM",
-  "background" : { "page": "samHelper/background.html" },
+  "background" : { "page": "samHelper/ChromeExt/background.html" },
   "permissions" : [
           "storage",
           "tabs",
@@ -12,12 +12,12 @@
   ],
   "page_action": {
     "default_icon": {                  
-    "19": "samHelper/icon19.png",          
-    "38": "samHelper/icon38.png",
-    "48": "samHelper/icon48.png"          
+    "19": "samHelper/ChromeExt/icon19.png",          
+    "38": "samHelper/ChromeExt/icon38.png",
+    "48": "samHelper/ChromeExt/icon48.png"          
     },
     "default_title": "help with SAM registration",
-    "default_popup": "samHelper/popup.html"
+    "default_popup": "samHelper/ChromeExt/popup.html"
     },
   "content_scripts": [
 	   {
@@ -25,7 +25,7 @@
 	   "css": ["samHelper/samHelper.css", "SamTracker/samtracker.css"],
 	   "js": [
            "samHelper/jquery-1.10.2.js",
-           "samHelper/samHelperChrExt.js",
+           "samHelper/ChromeExt/samHelperChromeExt.js",
            "SamTracker/govxArrow.js",
            "SamTracker/govxStateMachine.js",
            "SamTracker/samtracker.js",
