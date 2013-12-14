@@ -25,6 +25,7 @@
 	   "css": ["samHelper/samHelper.css", "SamTracker/samtracker.css"],
 	   "js": [
            "samHelper/jquery-1.10.2.js",
+           "samHelper/samHelperChrExt.js",
            "SamTracker/govxArrow.js",
            "SamTracker/govxStateMachine.js",
            "SamTracker/samtracker.js",

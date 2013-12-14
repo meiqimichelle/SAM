@@ -43,19 +43,20 @@
         (function() {        // Load Ajax content in a synchronized function
             var callsLeft = 1;
 
-            $.ajax({
-                type: "GET",
-                url: chrome.extension.getURL("samHelper/samHelper.json"),
-                dataType: "json"
-            }).done(function(msg) {
-                  siteData = msg;
+            var delegate = new SamHelperDelegate();
+            delegate.doneFn = function(msg) {
+                siteData = msg;
                 callsLeft--;
                 if (callsLeft === 0) {
                     $('html').trigger('ajaxDone');
                 }
-            }).fail(function(object, str) {
+            };
+
+            delegate.failFn = function(object, str) {
                 console.log("Fail:" + str);
-            });
+            };
+
+            delegate.getSiteData();
         })();
 
         $('html').on('ajaxDone', function() {
