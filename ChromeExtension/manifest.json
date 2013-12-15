@@ -1,14 +1,13 @@
 {
-  "name" : "Help me with SAM",
-  "version" : "0.5.0",
-  "description" : "show me what I need to know to register at SAM",
+  "name" : "SAM Helper",
+  "version" : "0.6.0",
+  "description" : "Help tool for businesses wishing to register at SAM.gov",
   "background" : { "page": "samHelper/ChromeExt/background.html" },
   "permissions" : [
           "storage",
           "tabs",
           "https://www.sam.gov/*",
-          "http://127.0.0.1:8124/*",
-          "http://mo.tynsax.com/api/*"
+          "https://fsd.gov/*"
   ],
   "page_action": {
     "default_icon": {                  
@@ -16,7 +15,7 @@
     "38": "samHelper/ChromeExt/icon38.png",
     "48": "samHelper/ChromeExt/icon48.png"          
     },
-    "default_title": "help with SAM registration",
+    "default_title": "Help with SAM registration",
     "default_popup": "samHelper/ChromeExt/popup.html"
     },
   "content_scripts": [

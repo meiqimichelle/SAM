@@ -1,30 +1,44 @@
 /*  This file contains styles applied to the SAM Helper content */
 /*  This file lives at: https://github.com/GSA-OCSIT/sam-helper */
 
-.busa {
+.help-toggler {
   position:fixed;
   width: 100%;
-  background-color: rgba(0,0,0,0.8);
-  max-height: 10em;
-  min-height: 1em;
+  background-color: black;
   z-index: 10000;
+}
+
+.help-toggler p {
+  width: 100%;
+  background-color: black;
   line-height: 125%;
   font-size: 125%;
 }
 
-x.busa a:link {
+.help-toggler#helper-toggle-div p a#toggle-link {
+  background-color: inherit;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+div.help-shadow#toggler-shadow {
+    position:static;
+    z-index: 9000;
+}
+
+help-toggler a:link {
   color: lightblue;
 }
 
-x.busa a:visited {
-  color: lightpink;
+help-toggler a:visited {
+  color: lightblue;
 }
 
-x.busa a:active {
-  color: red;
+help-toggler a:active {
+  color: lightblue;
 }
-x.busa a:hover {
-  color: lavender;
+help-toggler a:hover {
+  color: lightblue;
 }
 
 div#busa-main {
@@ -36,45 +50,59 @@ div#busa-main {
   background-color: 0xcccccc;
 }
 
-div.busa#busa-toggle-div {
-    position: static;
-}
-
-div#busa-toggle {
-  width: 100px;
+div.helper-content#helper-top-bar {
+  position:fixed;
+  text-align: left;
+  height: auto;
+  width:100%;
+  color: black;
+  font-size: 120%;
   z-index: 10000;
+  border: solid black 4px;
+  border-top: 0px;
+  background-color: #cacaca;
 }
 
-#busa-toggle div {
-  padding: 1em;
+div.helper-content div.helper-content dl,dt,dd {
+    width: inherit;
 }
 
-.busa-guide-text {
-  padding: 1em;
+div.helper-content#helper-top-bar div.helper-content#page_section {
   float: left;
-  font-size: 1.4em;
-  line-height: 1.5em;
-  width: 67%;
+  height: 100%;
+  width: 200px;
+  margin: 5px 5px 5px 20px;
+  padding: 5px;
 }
 
-div.busa div.overview {
-  float: left;
-  line-height:1.3;
-  font-size: 1.2em;
-  text-align: left;
-  width: 40%;
-  padding: 1em;
-  padding-left: 5em;
-  margin-bottom: 1em;
+div.helper-content#helper-top-bar div.helper-content#progress_section {
+  width: auto;
+  height: 100%;
+  padding: 5px;
+  margin: 5px 5px 5px 5px;
 }
 
-div.busa div.help_info {
+div.helper-content#helper-top-bar div.helper-content#site_section {
   float: right;
-  line-height:1.3;
-  font-size: 1.2em;
-  text-align: left;
-  width: 25%;
-  padding: 1em;
+  height: 100%;
+  width: 200px;
+  padding: 5px;
+  margin: 5px 20px 5px 5px;
+  font-size: 80%;
+}
+
+div.helper-content div.helper-content dl dt {
+  display:inline;
+  width 90 px;
+  text-align:right;
+  font-family: 'Lucida Grande', sans-serif;
+  font-weight:bolder;
+}
+
+div.helper-content div.helper-content dl dd {
+  display:inline;
+  width 90 px;
+  text-align:left;
 }
 
 body div.quick_hint#display-hover-text {
@@ -87,23 +115,6 @@ body div.quick_hint#display-hover-text {
     font-family: "Lucinda Grande",Arial,sans-serif;
     font-size: 11px;
     z-index: 20000;
-}
-div.progress#progress {
-    clear:both;
-    font-size: 150%;
-    background-color: gray;
-    color: black;
-    border: 2px solid black;
-    margin: 3px;
-    padding: 2px;
-    width: 250px;
-}
-
-div.busa#busa-main {
-border-left: solid black 2px;
-border-bottom: solid black 2px;
-border-right: solid black 2px;
-background-color: #cacaca;
 }
 
 div#busa-content div.helper_item.overview {
@@ -130,42 +141,4 @@ div.helper_item.help_info {
     background-color: #cacaca;
     color: black;
     z-index: 100000;
-}
-
-div.helper_item table#site_help_table {
-    padding-left: 60px;
-    padding-right: 60px;
-}
-
-tr.site_help_table_row#site_help_table_row td#page_section {
-    text-align: left;
-    border-right: solid #666666 5px;
-    padding: 8px;
-    width: auto;
-}
-
-tr.site_help_table_row#site_help_table_row td#page_section p {
-    width: 250px;
-    line-height: 90%;
-}
-
-tr.site_help_table_row#site_help_table_row td#progress_section {
-    text-align: right;
-    border-right: solid #666666 5px;
-    padding: 8px;
-    width: auto;
-}
-
-tr.site_help_table_row#site_help_table_row td#progress_section p {
-    line-height: 90%;
-}
-
-tr.site_help_table_row#site_help_table_row td#site_section {
-    border-left: solid #666666 5px;
-    padding: 8px;
-    width: auto;
-}
-
-tr.site_help_table_row#site_help_table_row td#site_section div.helper_item {
-    border: none;
 }

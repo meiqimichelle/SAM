@@ -14,10 +14,18 @@
 
             this.pageName = 'div.page_heading'
             this.topBarInsertionPoint = '#UIPortalApplication'
-            this.toggleHelperDiv = '<div class="busa" id="busa-toggle-div"><p><a href="#"' +
-                            'id="busa-toggle">Minimize the SAM Helper</a></p></div>'
+            this.toggleHelperDiv =
+                            '<div class="help-toggler" id="helper-toggle-div"><p><a href="#"' +
+                            'id="toggle-link">Minimize the SAM Helper</a></p></div>'+
+                            '<div class="help-shadow" id="toggle-shadow"></div>'
             this.quickHintDiv = '<div class="quick_hint" id="display-hover-text"></div>'
             this.helpBoxShadow = '<div id="help-shadow"></div>'
+            this.siteHelpInsertionPoint =
+                    'div#helper-top-bar div#site_section'
+            this.pageHelpInsertionPoint =
+                    'div#helper-top-bar div#page_section'
+            this.progressInsertionPoint =
+                    'div#helper-top-bar div#progress_section'
         }
         var dS = new DomSelectors();
         var uJH = new UsdsJsHelper();
@@ -28,7 +36,7 @@
             pageName += $('div.sub_heading').text();
         } else {
             pageName = 'SAM.gov';
-            $('div#busa-main').hide();
+            $('div#helper-top-bar').hide();
         }
         var pageToken = pageName.replace(/[^A-Za-z0-9]/g, '_');
         var siteData;
@@ -72,29 +80,23 @@
             $('body').prepend(dS.helpBoxShadow);
             $('body').prepend($(dS.toggleHelperDiv));
             $(dS.quickHintDiv).insertAfter($(dS.toggleHelperDiv));
-            $('div#help-shadow').css({'height':
-                            $('div.busa#busa-main').css('height')});
-
             $(siteData.assets.html.topBarContent.join('\n')).insertBefore(dS.topBarInsertionPoint);
-            $('tbody tr.site_help_table_row#site_help_table_row ' +
-                    'td.site_help_table_item#page_section').
-                    html(pageData.assets.html.page_overview.join('\n'));
+            $(dS.siteHelpInsertionPoint).
+                    html( siteData.assets.html.site_help.join('\n'));
+            $(dS.pageHelpInsertionPoint).
+                    html( pageData.assets.html.page_help.join('\n'));
+            $(dS.progressInsertionPoint).
+                    html('<p>Progress: ' + progress + '%</p>');
+            $('div#toggle-shadow').css({
+                                    'height': $('div#helper-toggle-div').css('height'),
+                                    'width': $('div#helper-toggle-div').css('width')
+                                    });
+            $('div#helper-top-bar').css({
+                                    'top': $('div#helper-toggle-div').css('height'),
+                                    });
+            $('div#help-shadow').css({'height':
+                            $('div#helper-top-bar').css('height')});
 
-            if (pageData.page_help) {
-                overviewText = '<div class="helper_item overview"' +
-                    'title="overview_text"><p>' +
-                    pageData.page_help +
-                    '</p></div>';
-            } else {
-                overviewText = ' ';
-            }
-            $('tbody tr.site_help_table_row#site_help_table_row ' +
-                    'td.site_help_table_item#site_section').
-                        html(siteData.assets.html.site_help.join('\n'));
-            $('tbody tr.site_help_table_row#site_help_table_row ' +
-                    'td.site_help_table_item#progress_section').
-                        html( arrowChainHtml );
-                        // html('<p>Progress: ' + progress + '%</p>');
 
             if (progress === undefined) {
                 progress = 'calculating';
@@ -117,13 +119,13 @@
                                                      });
                 }
                 // define toggle/click/slide behavior
-                $('#busa-toggle').click(function() {
-                    if ( $('div.helper_item[title="site"]').is(":visible") ) {
-                        $('div.helper_item[title="site"], div#help-shadow').slideUp();
+                $('a#toggle-link').click(function() {
+                    if ( $('div#helper-top-bar').is(":visible") ) {
+                        $('div#helper-top-bar, div#help-shadow').slideUp();
                         $(this).text("View assistance for " + pageName);
                     sessionStorage.usdsJsHelperVisible = 'false';
                     } else {
-                        $('div.helper_item[title="site"], div#help-shadow').slideDown();
+                        $('div#helper-top-bar, div#help-shadow').slideDown();
                         $(this).text("Minimize the SAM Helper");
                     sessionStorage.usdsJsHelperVisible = 'true';
                     }
@@ -135,9 +137,9 @@
                 }
 
                 if ( sessionStorage.usdsJsHelperVisible === 'true') {
-                    $('div#busa-main').slideDown();
+                    $('div#helper-top-bar').slideDown();
                 } else {
-                    $('div#busa-main').slideUp();
+                    $('div#helper-top-bar').slideUp();
                 }
             });
         });
