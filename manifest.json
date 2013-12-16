@@ -1,0 +1,49 @@
+{
+  "name" : "SAM Helper Manager",
+  "version" : "0.1.0",
+  "description" : "Combo extension for managing content for SAM Helper",
+  "background" : { "page": "helper-gen/background.html" },
+  "permissions" : [
+          "storage",
+          "tabs",
+          "https://www.sam.gov/*",
+          "https://fsd.gov/*"
+  ],
+  "page_action": {
+    "default_icon": {                  
+    "19": "ChromeExtension/samHelper/ChromeExt/images/icon19.png",          
+    "38": "ChromeExtension/samHelper/ChromeExt/images/icon38.png",
+    "48": "ChromeExtension/samHelper/ChromeExt/images/icon48.png"          
+    },
+    "default_title": "Manage SAM Helper Configuration",
+    "default_popup": "helper-gen/popup.html"
+    },
+  "content_scripts": [
+	   {
+	   "matches": ["https://www.sam.gov/*"],
+	   "css": [
+            "ChromeExtension/samHelper/samHelper.css",
+            "ChromeExtension/SamTracker/samtracker.css",
+            "helper-gen/configurationHelper.css"
+       ],
+	   "js": [
+           "samHelper/jquery-1.10.2.js",
+           "samHelper/ChromeExt/samHelperChromeExt.js",
+           "SamTracker/govxArrow.js",
+           "SamTracker/govxStateMachine.js",
+           "SamTracker/samtracker.js",
+           "samHelper/usdsJsHelper.js",
+           "helper-gen/configureHelper.js",
+           "samHelper/samHelper.js"
+           ]
+	   }
+  ],
+  "minimum_chrome_version" : "6.0.0.0",
+  "manifest_version": 2,
+  "web_accessible_resources": [
+      "ChromeExtension/samHelper/samHelper.html",
+      "ChromeExtension/SamTracker/samtracker.html",
+      "ChromeExtension/SamTracker/samscreen.png",
+      "ChromeExtension/samHelper/samHelper.json"
+  ]
+}
