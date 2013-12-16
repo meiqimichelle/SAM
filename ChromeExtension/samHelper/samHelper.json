@@ -1,18 +1,69 @@
 {
     "title": "Sam Helper Configuration",
     "comment": "",
+    "assets": {
+        "html": {
+            "topBarContent": [
+                "<div class='helper-content' id='helper-top-bar'>",
+                    "<div class='helper-content' id='page_section'></div>",
+                    "<div class='helper-content' id='site_section'></div>",
+                    "<div class='helper-content' id='progress_section'></div>",
+                "</div>"
+            ],
+
+
+            "site_help": [
+                "Help Resources",
+                "<dl>",
+                    "<dt>Call (USA)</dt><dd>866-606-8220</dd><br />",
+                    "<dt>Call (International)</dt><dd>334-206-7828</dd><br />",
+                    "<dt>Call (DSN)</dt><dd>866-606-8220</dd><br />",
+                    "<dt>Web</dt><dd><a href = 'https://www.fsd.gov/fsd-gov/login.do'>",
+                        "www.fsd.gov</a></dd><br />",
+                "</dl>"
+            ]
+        }
+    },
     "pages": [
         {
             "page_name": "SAM_gov",
-            "progress": "3"
+            "progress": "3",
+            "assets": {
+                "html": {
+                    "page_help": [
+                        "<span>",
+                            "Welcome to the SAM.gov helper.",
+                            "The helper is here to guide you through the SAM registration process.",
+                            "It will help you prepare and then steer you through the individual screens.",
+                            "When you are done, your business will be registered and ready to go.</span",
+                            "<span>The first step is to CREATE your account.",
+                            "To begin, click on the 'Create User Account' button below on the left",
+                        "</span>"]
+                }
+            }
         },
         {
             "page_name": "Create_an_AccountChoose_Account_Type_",
-            "progress": "6"
+            "progress": "6",
+            "assets": {
+                "html": {
+                    "page_help": [
+                        "Click on Create Account to proceed."
+                   ]
+                }
+            }
         },
         {
             "page_name": "Personal_Information______",
             "progress": "16",
+            "assets": {
+                "html": {
+                    "page_help": [
+                        "Go ahead and enter your details below, ",
+                        "so that you can get an account and get started with SAM!"
+                   ]
+                }
+            },
             "form_fields": [
                 {
                     "token": "Title",
@@ -150,19 +201,43 @@
         },
         {
             "page_name": "Personal_Information__Duplicate_Email_Address_",
-            "progress": "16"
+            "progress": "16",
+            "assets": {
+                "html": {
+                    "page_help":
+                    ["This will be help for a duplicate email address."]
+                }
+            }
         },
         {
             "page_name": "Account_Information",
-            "progress": "20"
+            "progress": "20",
+            "assets": {
+                "html": {
+                    "page_help":
+                    ["This will be help for Account Information."]
+                }
+            }
         },
         {
             "page_name": "Summary",
-            "progress": "22"
+            "progress": "22",
+            "assets": {
+                "html": {
+                    "page_help":
+                    ["This will be help for Summary."]
+                }
+            }
         },
         {
             "page_name": "Create_Account__Personal_Account_Created_Confirmation",
-            "progress": "24"
+            "progress": "24",
+            "assets": {
+                "html": {
+                    "page_help":
+                    ["This will be help for Account Created."]
+                }
+            }
         }
     ]
 }

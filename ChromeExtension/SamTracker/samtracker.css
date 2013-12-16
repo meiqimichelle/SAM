@@ -1,35 +1,33 @@
-body {
-    background-image: url('samscreen.png');
-}
-
-#indicators {
-  position: relative;
-  width: 600px;
-  margin: auto;
-  min-height: 100px;
-}
-
-.usecase {
-  width: auto;
-}
-
-.state-box {
-    width: 130px;
-    height: 70px;
-    margin: 5px 20;
-    border: 2px #666666 solid;
-    font-family: "Lucinda Grande",Arial, sans-serif;
-    font-size: 17px;
-    text-align: center;
+table.tracker-table#state-table {
+    position:absolute;
+    visibility:hidden;
+    background-color:LightBlue;
 }
 
 div.arrow-chain#registration-progress {
     width: auto;
-    margin-top: 150px;
-    margin-left: 350px;
-    padding-left: 100px;
-    padding: 20px;
     background-color: rgba(202,202,202,0.0);
+}
+
+div.svg-div svg {
+    width:200;
+}
+
+text.arrow-text {
+    display: inline;
+    font-family: "Lucida Grande",Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 110%;
+}
+
+div.arrow-div {
+    display:inline;
+}
+
+div#anchor-chain {
+}
+
+div#anchor-chain div.svg-div svg.text-arrow {
 }
 
 div.popup-container {
@@ -79,25 +77,14 @@ button#more-info {
     font-size: 13px;
 }
 
-div.svg-div svg {
-    width:200;
-}
-
-text.arrow-text {
-    display: inline;
-    font-family: "Lucida Grande",Arial,sans-serif;
-    font-size: 14px;
-    font-weight: 110%;
-}
-
-div.arrow-div {
-    display:inline;
-}
-
-div#anchor-chain {
-}
-
-div#anchor-chain div.svg-div svg.text-arrow {
+.state-box {
+    width: 130px;
+    height: 70px;
+    margin: 5px 20;
+    border: 2px #666666 solid;
+    font-family: "Lucinda Grande",Arial, sans-serif;
+    font-size: 17px;
+    text-align: center;
 }
 
 div#state-machine {
@@ -105,24 +92,12 @@ div#state-machine {
     overflow: scroll;
 }
 
+.usecase {
+  width: auto;
+}
+
 button.usecase-button {
     font-size: 18px;
-}
-
-table.tracker-table#state-table {
-    position:absolute;
-    visibility:hidden;
-    background-color:LightBlue;
-}
-
-div.usecase-controls {
-    margin-left: 500px;
-    margin-top: 100px;
-    padding: 3px;
-    background-color: #ffffdd;
-    border: groove #800000 5px;
-    font-size: 20px;
-    width: 500px;
 }
 
 h2.usecase#top-header {
@@ -133,4 +108,14 @@ h2.usecase#top-header {
 
 p.usecase#usecase-currentstate {
     font-size: 20px;
+}
+
+div.usecase-controls {
+    margin-left: 500px;
+    margin-top: 100px;
+    padding: 3px;
+    background-color: #ffffdd;
+    border: groove #800000 5px;
+    font-size: 20px;
+    width: 500px;
 }
