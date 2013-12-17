@@ -5,9 +5,15 @@
         "html": {
             "topBarContent": [
                 "<div class='helper-content' id='helper-top-bar'>",
-                    "<div class='helper-content' id='page_section'></div>",
-                    "<div class='helper-content' id='site_section'></div>",
-                    "<div class='helper-content' id='progress_section'></div>",
+                    "<div class='container'>",
+                        "<div class='left-content' id='left-content'>",
+                            "<div class='not-classy' id='page-help'></div>",
+                            "<div class='not-classy' id='progress'></div>",
+                        "</div>",
+                        "<div class='right-content' id='right-content'>",
+                            "<div class='not-classy' id='site-help'></div>",
+                        "</div>",
+                    "</div>",
                 "</div>"
             ],
 

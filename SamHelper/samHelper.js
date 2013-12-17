@@ -7,9 +7,8 @@
 // usdsJsHelper.js must be loaded before execution
 //
 
-(function() {
-
-    if (!localStorage.helperMode || localStorage.helperMode === 'help') {
+chrome.runtime.sendMessage({'command': 'get-helper-mode'}, function(response) {
+    if (response.helperMode === 'help') {
         function DomSelectors() {   // Declare main selector strings to improve modularity
 
             this.pageName = 'div.page_heading'
@@ -20,12 +19,9 @@
                             '<div class="help-shadow" id="toggle-shadow"></div>'
             this.quickHintDiv = '<div class="quick_hint" id="display-hover-text"></div>'
             this.helpBoxShadow = '<div id="help-shadow"></div>'
-            this.siteHelpInsertionPoint =
-                    'div#helper-top-bar div#site_section'
-            this.pageHelpInsertionPoint =
-                    'div#helper-top-bar div#page_section'
-            this.progressInsertionPoint =
-                    'div#helper-top-bar div#progress_section'
+            this.siteHelpInsertionPoint = 'div#site-help'
+            this.pageHelpInsertionPoint = 'div#page-help'
+            this.progressInsertionPoint = 'div#progress'
         }
         var dS = new DomSelectors();
         var uJH = new UsdsJsHelper();
@@ -144,4 +140,4 @@
             });
         });
     }
-})();
+});

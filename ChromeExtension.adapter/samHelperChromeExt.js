@@ -17,7 +17,7 @@ function SamHelperDelegate() {
         var saveThis = this;
         $.ajax({
             type: "GET",
-            url: chrome.extension.getURL("samHelper/samHelper.json"),
+            url: chrome.extension.getURL("SamHelper/samHelper.json"),
             dataType: "json"
         }).done(function(msg) {
             saveThis.doneFn.call(saveThis, msg);

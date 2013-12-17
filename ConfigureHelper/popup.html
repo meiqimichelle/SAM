@@ -6,6 +6,7 @@
   <head>
   <title>ConfigureHelper</title>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="popup.css">
   <script src="jquery-1.10.2.js"></script>
   </head>
     <body>
@@ -14,15 +15,19 @@
   </body>
 </html>
   <body>
-    <fieldset>
-      <dl>
-        <dt><label for="mode">Help Mode: </label></dt>
-        <dd><select id="mode">
-          <option value="off">Off</option>
-          <option value="configure">Configure</option>
-          <option value="help">Help</option>
-        </select></dd>
-      </dl>
-    </fieldset>
+    <div class="helper-popup" id="configure-part">
+        <fieldset>
+          <dl>
+            <dt><label for="mode">Help Mode: </label></dt>
+            <dd><select id="mode">
+              <option value="off">Off</option>
+              <option value="configure">Configure</option>
+              <option value="help">Help</option>
+            </select></dd>
+          </dl>
+        </fieldset>
+    </div>
+    <div class="helper-popup" id="help-part">
+    </div>
   </body>
 </html>

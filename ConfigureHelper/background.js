@@ -19,6 +19,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	sendResponse({status: "nominal"});
 	break;
 
+	case 'get-helper-mode':
+	sendResponse({helperMode: localStorage.helperMode});
+	break;
+
 	default:
 	break;
 	}

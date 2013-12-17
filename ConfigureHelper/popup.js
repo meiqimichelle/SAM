@@ -11,7 +11,6 @@ var samHelperExtId = 'edjkgghfdhoigijgofhpdblffonglmda';
 
 function settingChanged() {
     localStorage.helperMode = this.value;
-    chrome.runtime.sendMessage(samHelperExtId, this.value);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
