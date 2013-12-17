@@ -21,7 +21,7 @@
   font-size: inherit;
 }
 
-div.help-shadow#toggler-shadow {
+.help-shadow#toggler-shadow {
     position:static;
     z-index: 9000;
 }
@@ -41,7 +41,7 @@ help-toggler a:hover {
   color: lightblue;
 }
 
-div#busa-main {
+#busa-main {
   text-align: left;
   height: 10em;
   z-index: 10000;
@@ -50,7 +50,7 @@ div#busa-main {
   background-color: 0xcccccc;
 }
 
-div.helper-content#helper-top-bar {
+.helper-content#helper-top-bar {
   position:fixed;
   text-align: left;
   height: auto;
@@ -63,11 +63,11 @@ div.helper-content#helper-top-bar {
   background-color: #cacaca;
 }
 
-div.helper-content div.helper-content dl,dt,dd {
+.helper-content .helper-content dl,dt,dd {
     width: inherit;
 }
 
-div.helper-content#helper-top-bar div.helper-content#page_section {
+.helper-content#helper-top-bar .helper-content#page_section {
   float: left;
   height: 100%;
   width: 200px;
@@ -75,14 +75,14 @@ div.helper-content#helper-top-bar div.helper-content#page_section {
   padding: 5px;
 }
 
-div.helper-content#helper-top-bar div.helper-content#progress_section {
+.helper-content#helper-top-bar .helper-content#progress_section {
   width: auto;
   height: 100%;
   padding: 5px;
   margin: 5px 5px 5px 5px;
 }
 
-div.helper-content#helper-top-bar div.helper-content#site_section {
+.helper-content#helper-top-bar .helper-content#site_section {
   float: right;
   height: 100%;
   width: 200px;
@@ -91,7 +91,7 @@ div.helper-content#helper-top-bar div.helper-content#site_section {
   font-size: 80%;
 }
 
-div.helper-content div.helper-content dl dt {
+.helper-content .helper-content dl dt {
   display:inline;
   width 90 px;
   text-align:right;
@@ -99,13 +99,13 @@ div.helper-content div.helper-content dl dt {
   font-weight:bolder;
 }
 
-div.helper-content div.helper-content dl dd {
+.helper-content .helper-content dl dd {
   display:inline;
   width 90 px;
   text-align:left;
 }
 
-body div.quick_hint#display-hover-text {
+body .quick_hint#display-hover-text {
     position: absolute;
     background-color: #cacaca;
     border: solid red 2px;

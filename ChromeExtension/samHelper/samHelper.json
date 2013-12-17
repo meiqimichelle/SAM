@@ -6,8 +6,8 @@
             "topBarContent": [
                 "<div class='helper-content' id='helper-top-bar'>",
                     "<div class='helper-content' id='page_section'></div>",
-                    "<div class='helper-content' id='site_section'></div>",
                     "<div class='helper-content' id='progress_section'></div>",
+                    "<div class='helper-content' id='site_section'></div>",
                 "</div>"
             ],
 
