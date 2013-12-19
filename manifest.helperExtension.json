@@ -2,7 +2,7 @@
   "name" : "SAM Helper",
   "version" : "0.6.0",
   "description" : "Help tool for businesses wishing to register at SAM.gov",
-  "background" : { "page": "samHelper/ChromeExt/background.html" },
+  "background" : { "page": "ChromeExtension.adapter/background.html" },
   "permissions" : [
           "storage",
           "tabs",
@@ -11,25 +11,25 @@
   ],
   "page_action": {
     "default_icon": {                  
-    "19": "samHelper/ChromeExt/icon19.png",          
-    "38": "samHelper/ChromeExt/icon38.png",
-    "48": "samHelper/ChromeExt/icon48.png"          
+    "19": "ChromeExtension.adapter/images/icon19.png",          
+    "38": "ChromeExtension.adapter/images/icon38.png",
+    "48": "ChromeExtension.adapter/images/icon48.png"          
     },
     "default_title": "Help with SAM registration",
-    "default_popup": "samHelper/ChromeExt/popup.html"
+    "default_popup": "ChromeExtension.adapter/popup.html"
     },
   "content_scripts": [
 	   {
 	   "matches": ["https://www.sam.gov/*"],
 	   "css": ["samHelper/samHelper.css", "SamTracker/samtracker.css"],
 	   "js": [
-           "samHelper/jquery-1.10.2.js",
-           "samHelper/ChromeExt/samHelperChromeExt.js",
+           "Shared/jquery-1.8.3.min.js",
+           "Shared/usdsJsHelper.js",
+           "ChromeExtension.adapter/samHelperChromeExt.js",
            "SamTracker/govxArrow.js",
            "SamTracker/govxStateMachine.js",
            "SamTracker/samtracker.js",
-           "samHelper/usdsJsHelper.js",
-           "samHelper/samHelper.js"
+           "SamHelper/samHelper.js"
            ]
 	   }
   ],
@@ -38,7 +38,6 @@
   "web_accessible_resources": [
       "samHelper/samHelper.html",
       "SamTracker/samtracker.html",
-      "SamTracker/samscreen.png",
-      "samHelper/samHelper.json"
+      "SamTracker/samscreen.png"
   ]
 }

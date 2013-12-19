@@ -3,6 +3,11 @@
     "comment": "",
     "assets": {
         "html": {
+            "pullTab": [
+                "<div class='pull-tab' id='top-bar-pull-tab'>",
+                    "Pull tab to open",
+                "</div>"
+            ],
             "topBarContent": [
                 "<div class='helper-content' id='helper-top-bar'>",
                     "<div class='container'>",
@@ -16,8 +21,6 @@
                     "</div>",
                 "</div>"
             ],
-
-
             "site_help": [
                 "Help Resources",
                 "<dl>",

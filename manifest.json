@@ -46,6 +46,7 @@
       "SamHelper/samHelper.html",
       "SamTracker/samtracker.html",
       "SamTracker/samscreen.png",
-      "SamHelper/samHelper.json"
+      "SamHelper/samHelper.json",
+      "Images/simTracker.png"
   ]
 }

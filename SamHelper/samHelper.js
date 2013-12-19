@@ -7,8 +7,18 @@
 // usdsJsHelper.js must be loaded before execution
 //
 
-chrome.runtime.sendMessage({'command': 'get-helper-mode'}, function(response) {
-    if (response.helperMode === 'help') {
+(function() {
+    if ( !SAM_HELPER_MODE ) {  // set if the extension includes configuration tool
+        chrome.runtime.sendMessage({'command': 'get-helper-mode'}, function(response) {
+            if (response.helperMode === 'help') {
+                beAHelper();
+            }
+        });
+    } else if ( SAM_HELPER_MODE === 'help') {
+        beAHelper();
+    }
+
+    function beAHelper() {
         function DomSelectors() {   // Declare main selector strings to improve modularity
 
             this.pageName = 'div.page_heading'
@@ -76,13 +86,16 @@ chrome.runtime.sendMessage({'command': 'get-helper-mode'}, function(response) {
             $('body').prepend(dS.helpBoxShadow);
             $('body').prepend($(dS.toggleHelperDiv));
             $(dS.quickHintDiv).insertAfter($(dS.toggleHelperDiv));
+            $(siteData.assets.html.pullTab.join('\n')).insertBefore(dS.topBarInsertionPoint);
             $(siteData.assets.html.topBarContent.join('\n')).insertBefore(dS.topBarInsertionPoint);
             $(dS.siteHelpInsertionPoint).
                     html( siteData.assets.html.site_help.join('\n'));
             $(dS.pageHelpInsertionPoint).
                     html( pageData.assets.html.page_help.join('\n'));
             $(dS.progressInsertionPoint).
-                    html('<p>Progress: ' + progress + '%</p>');
+                    // html('<p>Progress: ' + progress + '%</p>');
+                    html('<img src="' + chrome.extension.getURL("Images/simTracker.png") +
+                        '" height="100px" width="500px" />')
             $('div#toggle-shadow').css({
                                     'height': $('div#helper-toggle-div').css('height'),
                                     'width': $('div#helper-toggle-div').css('width')
@@ -140,4 +153,4 @@ chrome.runtime.sendMessage({'command': 'get-helper-mode'}, function(response) {
             });
         });
     }
-});
+})();
