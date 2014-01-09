@@ -16,19 +16,19 @@
                             "<div class='helper-progress' id='progress'></div>",
                         "</div>",
                         "<div class='right-content' id='right-content'>",
-                            "<div class='not-classy' id='site-help'></div>",
+                            "<div class='helper-contact' id='site-help'></div>",
                         "</div>",
                     "</div>",
                 "</div>"
             ],
             "site_help": [
-                "Help Resources",
+                "<h1>Need Help?</h1>",
                 "<dl>",
-                    "<dt>Call (USA)</dt><dd>866-606-8220</dd><br />",
-                    "<dt>Call (International)</dt><dd>334-206-7828</dd><br />",
-                    "<dt>Call (DSN)</dt><dd>866-606-8220</dd><br />",
-                    "<dt>Web</dt><dd><a href = 'https://www.fsd.gov/fsd-gov/login.do'>",
-                        "www.fsd.gov</a></dd><br />",
+                    "<dt>Call (USA): </dt><dd>866-606-8220</dd><br />",
+                    "<dt>Call (International): </dt><dd>334-206-7828</dd><br />",
+                    "<dt>Call (DSN): </dt><dd>866-606-8220</dd><br />",
+                    "<dt>Web </dt><dd><a href = 'https://www.fsd.gov/fsd-gov/login.do'>",
+                       "www.fsd.gov</a></dd>",
                 "</dl>"
             ]
         }

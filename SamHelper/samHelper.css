@@ -35,12 +35,12 @@
   z-index: 10000;
 }
 
-.help-toggler a:link,
+.help-toggler a,
 .help-toggler a:visited {
 	color: #1686a8; /* aqua */
 }
 
-.help-toggler a:active,
+.help-toggler a:focus,
 .help-toggler a:hover {
   color: #2399b5; /* bright aqua */
   text-decoration: none;
@@ -60,6 +60,10 @@
   line-height: 18px;
   color: #0a225d;
   text-align: left;
+}
+
+.helper-content a:link {
+	color: #0a225d;
 }
 
 .container {
@@ -100,7 +104,33 @@ p.next-step::before {
 	top: 17px;
 }
 
+.helper-progress {
+	
+}
 
+.helper-contact {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.helper-contact h1 {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.helper-contact dl dt, .helper-contact dl dd  {
+ 	display: inline;
+ 	text-align: right;
+}
+
+.helper-contact a {
+	color: #0a225d;
+}
+
+.helper-contact a:hover, .helper-contact a:focus {
+	color: #0a225d;
+	text-decoration: none;
+}
 
 /************ HAVEN'T USED THE CLASSES BELOW YET -MH *************/
 
@@ -138,20 +168,6 @@ p.next-step::before {
   padding: 5px;
   margin: 5px 20px 5px 5px;
   font-size: 80%;
-}
-
-.helper-content .helper-content dl dt {
-  display:inline;
-  width 90 px;
-  text-align:right;
-  font-family: 'Lucida Grande', sans-serif;
-  font-weight:bolder;
-}
-
-.helper-content .helper-content dl dd {
-  display:inline;
-  width 90 px;
-  text-align:left;
 }
 
 body .quick_hint#display-hover-text {
