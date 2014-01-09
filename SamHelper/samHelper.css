@@ -1,6 +1,10 @@
 /*  This file contains styles applied to the SAM Helper content */
 /*  This file lives at: https://github.com/GSA-OCSIT/sam-helper */
 
+/***************** FONT ****************/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/*************** PULL TAB **************/
 .pull-tab {
     position: absolute;
     top: 10em;
@@ -22,48 +26,49 @@
     font-weight:normal;
 }
 
+/***************** TOGGLER ****************/
 .help-toggler {
   position:fixed;
   width: 100%;
-  background-color: black;
+  background-color: #0a225d; /* dark blue */
+  font-family: 'Open Sans', sans-serif;
   z-index: 10000;
 }
 
-.help-toggler p {
-  width: 100%;
-  background-color: black;
-  line-height: 125%;
-  font-size: 125%;
+.help-toggler a:link,
+.help-toggler a:visited {
+	color: #1686a8; /* aqua */
 }
 
-.help-toggler#helper-toggle-div p a#toggle-link {
-  background-color: inherit;
-  line-height: inherit;
-  font-size: inherit;
+.help-toggler a:active,
+.help-toggler a:hover {
+  color: #2399b5; /* bright aqua */
+  text-decoration: none;
 }
 
-.help-shadow#toggler-shadow {
-    position:static;
-    z-index: 9000;
+/***************** CONTENT ****************/
+.helper-content {
+  position:fixed;
+  z-index: 10000;
+  width:100%;
+  height: auto;
+  background-color: #1686a8;
+  border-bottom: solid #0a225d 4px;
+  padding-top: 11px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: #0a225d;
+  text-align: left;
 }
 
-help-toggler a:link {
-  color: lightblue;
-}
-
-help-toggler a:visited {
-  color: lightblue;
-}
-
-help-toggler a:active {
-  color: lightblue;
-}
-help-toggler a:hover {
-  color: lightblue;
+.container {
+	width: 980px;
+	margin: 0 auto;
 }
 
 .left-content {
-    max-width: 50%;
+    max-width: 60%;
     float: left;
 }
 
@@ -72,26 +77,39 @@ help-toggler a:hover {
     float: right;
 }
 
+.helper-text {
+	
+}
+
+.next-step {
+	padding: 10px 0 35px 30px;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+p.next-step::before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #0a225d;
+	position: relative;
+	left: -17px;
+	top: 17px;
+}
+
+
+
+/************ HAVEN'T USED THE CLASSES BELOW YET -MH *************/
+
 #busa-main {
   text-align: left;
   height: 10em;
   z-index: 10000;
   top: 1em;
   left: 0px;
-  background-color: 0xcccccc;
-}
-
-.helper-content#helper-top-bar {
-  position:fixed;
-  text-align: left;
-  height: auto;
-  width:100%;
-  color: black;
-  font-size: 120%;
-  z-index: 10000;
-  border: solid black 4px;
-  border-top: 0px;
-  background-color: #cacaca;
 }
 
 .helper-content .helper-content dl,dt,dd {
@@ -148,11 +166,11 @@ body .quick_hint#display-hover-text {
     z-index: 20000;
 }
 
-div#busa-content div.helper_item.overview {
+#busa-content div.helper_item.overview {
     padding: 5px 3px;
 }
 
-div.helper_item.overview p {
+.helper_item.overview p {
     padding: 5px 3px;
     font-family: "Lucinda Grande",Arial,sans-serif;
     font-size: 13px;
@@ -161,7 +179,7 @@ div.helper_item.overview p {
     color: black;
 }
 
-div.helper_item.help_info {
+.helper_item.help_info {
     position: fixed;
     height:100px;
     border: solid black 3px;

@@ -4,16 +4,16 @@
     "assets": {
         "html": {
             "pullTab": [
-                "<div class='pull-tab' id='top-bar-pull-tab'>",
+                "<!--<div class='pull-tab' id='top-bar-pull-tab'>",
                     "Pull tab to open",
-                "</div>"
+                "</div>-->"
             ],
             "topBarContent": [
                 "<div class='helper-content' id='helper-top-bar'>",
                     "<div class='container'>",
                         "<div class='left-content' id='left-content'>",
-                            "<div class='not-classy' id='page-help'></div>",
-                            "<div class='not-classy' id='progress'></div>",
+                            "<div class='helper-text' id='page-help'></div>",
+                            "<div class='helper-progress' id='progress'></div>",
                         "</div>",
                         "<div class='right-content' id='right-content'>",
                             "<div class='not-classy' id='site-help'></div>",
@@ -40,14 +40,14 @@
             "assets": {
                 "html": {
                     "page_help": [
-                        "<span>",
-                            "Welcome to the SAM.gov helper.",
-                            "The helper is here to guide you through the SAM registration process.",
-                            "It will help you prepare and then steer you through the individual screens.",
-                            "When you are done, your business will be registered and ready to go.</span",
-                            "<span>The first step is to CREATE your account.",
-                            "To begin, click on the 'Create User Account' button below on the left",
-                        "</span>"]
+						"<p>",
+                        	"Welcome to the SAM Helper.",
+                        	"It will guide you through the SAM registration process with helpful context and guides on each screen.",
+                        	"When you’re done, your business will be registered and ready to go!",
+						"</p>",
+						"<p class='next-step'>",
+							"To begin your SAM application, click on the &ldquo;Create User Account&rdquo; button below on the left.",
+                        "</p>"]
                 }
             }
         },
